@@ -1,0 +1,23 @@
+module Hilcode.Machine.Metadata
+( FirstPos
+, Index
+, LastPos
+, Nullable
+, (&&&)
+, (|||)
+, at
+, convertFirstPosToVector
+, convertSetToVector
+, firstPos
+, getFromMap
+, increment
+, lastPos
+, noFirstPos
+, noLastPos
+, notNullable
+, nullable
+, setFollowPos
+, zero
+) where
+
+import           Hilcode.Machine.Internal.Metadata

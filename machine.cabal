@@ -1,0 +1,119 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e8eee53b94e909941674b333d01d4f999594a0890271d2ca12385a93da887c3a
+
+name:           machine
+version:        0.0.0.1
+category:       Utility
+homepage:       https://github.com/hilcode/machine#readme
+bug-reports:    https://github.com/hilcode/machine/issues
+author:         Hilco Wijbenga
+maintainer:     Hilco Wijbenga
+copyright:      2020 Hilco Wijbenga
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/hilcode/machine
+
+library
+  exposed-modules:
+      Hilcode.Machine.AtomPredicate
+      Hilcode.Machine.AtomSource
+      Hilcode.Machine.Internal.Match
+      Hilcode.Machine.Internal.Metadata
+      Hilcode.Machine.TokenBuilder
+  other-modules:
+      Hilcode.Machine
+      Hilcode.Machine.Internal.Machine
+      Hilcode.Machine.Internal.Program
+      Hilcode.Machine.Metadata
+      Hilcode.Misc.Collections
+      Hilcode.State
+      Hilcode.Tuples
+      Main
+      Paths_machine
+  hs-source-dirs:
+      src/main/haskell
+  default-extensions: BangPatterns DataKinds DeriveGeneric FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NoMonomorphismRestriction OverloadedStrings ScopedTypeVariables Strict TupleSections UndecidableInstances
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wtabs -Wno-name-shadowing -fplugin=StackTrace.Plugin
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , haskell-stack-trace-plugin
+    , hedgehog
+    , hspec
+    , hw-hspec-hedgehog
+    , text
+    , text-builder
+    , vector
+  default-language: Haskell2010
+
+executable machine
+  main-is: Main.hs
+  other-modules:
+      Hilcode.Machine
+      Hilcode.Machine.AtomPredicate
+      Hilcode.Machine.AtomSource
+      Hilcode.Machine.Internal.Machine
+      Hilcode.Machine.Internal.Match
+      Hilcode.Machine.Internal.Metadata
+      Hilcode.Machine.Internal.Program
+      Hilcode.Machine.Metadata
+      Hilcode.Machine.TokenBuilder
+      Hilcode.Misc.Collections
+      Hilcode.State
+      Hilcode.Tuples
+      Paths_machine
+  hs-source-dirs:
+      src/main/haskell
+  default-extensions: BangPatterns DataKinds DeriveGeneric FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NoMonomorphismRestriction OverloadedStrings ScopedTypeVariables Strict TupleSections UndecidableInstances
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wtabs -Wno-name-shadowing -fplugin=StackTrace.Plugin
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , haskell-stack-trace-plugin
+    , hedgehog
+    , hspec
+    , hw-hspec-hedgehog
+    , machine
+    , text
+    , text-builder
+    , vector
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Hilcode.Checks
+      Hilcode.Generators
+      Hilcode.Machine.AtomPredicateSpec
+      Hilcode.Machine.AtomSourceSpec
+      Hilcode.Machine.Internal.MatchSpec
+      Hilcode.Machine.Internal.MetadataSpec
+      Hilcode.Machine.TokenBuilderSpec
+  hs-source-dirs:
+      src/test/haskell
+  default-extensions: BangPatterns DataKinds DeriveGeneric FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NoMonomorphismRestriction OverloadedStrings ScopedTypeVariables Strict TupleSections UndecidableInstances
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wtabs -Wno-name-shadowing -fplugin=StackTrace.Plugin
+  build-depends:
+      base
+    , containers
+    , haskell-stack-trace-plugin
+    , hedgehog
+    , hspec
+    , hw-hspec-hedgehog
+    , machine
+    , text
+    , text-builder
+    , vector
+  default-language: Haskell2010

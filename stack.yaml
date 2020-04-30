@@ -5,6 +5,7 @@ compiler: ghc-8.6.5
 packages:
 - .
 
-extra-deps: []
+extra-deps:
+    - haskell-stack-trace-plugin-0.1.1.1@sha256:6432ef8e72785d37fc7c4d118a72f0cb65be9e0ec290509f864570204c3695f4,2094
 
 flags: {}

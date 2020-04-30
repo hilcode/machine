@@ -37,9 +37,9 @@ ghc-options:
 - -Wcompat
 - -Wincomplete-record-updates
 - -Wincomplete-uni-patterns
-- -Wredundant-constraints
 - -Wtabs
 - -Wno-name-shadowing
+- -fplugin=StackTrace.Plugin
 
 dependencies:
 - base >= 4.7 && < 5
@@ -50,6 +50,7 @@ dependencies:
 - text
 - text-builder
 - vector
+- haskell-stack-trace-plugin
 
 executables:
   machine:
@@ -63,7 +64,11 @@ library:
   source-dirs:
     - src/main/haskell
   exposed-modules:
-    - Hilcode.Misc.Internal
+    - Hilcode.Machine.AtomPredicate
+    - Hilcode.Machine.AtomSource
+    - Hilcode.Machine.Internal.Match
+    - Hilcode.Machine.Internal.Metadata
+    - Hilcode.Machine.TokenBuilder
 
 tests:
   test:
@@ -74,4 +79,10 @@ tests:
       - base
       - machine
     other-modules:
-      - Hilcode.MiscSpec
+      - Hilcode.Checks
+      - Hilcode.Generators
+      - Hilcode.Machine.AtomPredicateSpec
+      - Hilcode.Machine.AtomSourceSpec
+      - Hilcode.Machine.Internal.MatchSpec
+      - Hilcode.Machine.Internal.MetadataSpec
+      - Hilcode.Machine.TokenBuilderSpec
