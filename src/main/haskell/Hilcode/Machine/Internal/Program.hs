@@ -19,11 +19,11 @@ data Instruction metadata atom token
     | Loop         (Instruction metadata atom token)
     | Optional     (Instruction metadata atom token)
     | Select       (Instruction metadata atom token) (Instruction metadata atom token) (Vector (Instruction metadata atom token))
-    deriving Show
+    deriving (Show, Eq)
 
 newtype Program metadata atom token
     = Program (Vector (Instruction metadata atom token))
-    deriving Show
+    deriving (Show, Eq)
 
 transform :: forall atom token . Program () atom token -> Program Index atom token
 transform (Program instructions) = (Program . decorateInstructions) instructions

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e8eee53b94e909941674b333d01d4f999594a0890271d2ca12385a93da887c3a
+-- hash: d1b2752a48fccbdb4100c84c4060fdc0b7bd44e41afcc80976fd2066c5c5f16c
 
 name:           machine
 version:        0.0.0.1
@@ -30,11 +30,11 @@ library
       Hilcode.Machine.AtomSource
       Hilcode.Machine.Internal.Match
       Hilcode.Machine.Internal.Metadata
+      Hilcode.Machine.Internal.Program
       Hilcode.Machine.TokenBuilder
   other-modules:
       Hilcode.Machine
       Hilcode.Machine.Internal.Machine
-      Hilcode.Machine.Internal.Program
       Hilcode.Machine.Metadata
       Hilcode.Misc.Collections
       Hilcode.State
@@ -100,6 +100,7 @@ test-suite test
       Hilcode.Machine.AtomSourceSpec
       Hilcode.Machine.Internal.MatchSpec
       Hilcode.Machine.Internal.MetadataSpec
+      Hilcode.Machine.Internal.ProgramSpec
       Hilcode.Machine.TokenBuilderSpec
   hs-source-dirs:
       src/test/haskell

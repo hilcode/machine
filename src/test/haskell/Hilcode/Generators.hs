@@ -11,6 +11,13 @@ import qualified Hedgehog.Range
 import           Hilcode.Machine.AtomSource
 import           Hilcode.Machine.Internal.Metadata
 import           Hilcode.Machine.Internal.Match
+import           Hilcode.Machine.TokenBuilder
+
+makeToken :: [Char] -> Text
+makeToken = const "TOKEN"
+
+generateTokenBuilder :: Gen (TokenBuilder Char Text)
+generateTokenBuilder = TokenBuilder <$> generateText <*> pure makeToken
 
 generateAtomSource :: Gen (AtomSource Char)
 generateAtomSource = Hedgehog.Gen.frequency
